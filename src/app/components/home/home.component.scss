@@ -1,0 +1,78 @@
+.content {
+    padding-top: 5rem;
+    height: 100vh;
+    position: relative;
+    background:url('/../../assets/images/bg.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    &::before {
+      content: " ";
+      /* background: rgba(4, 8, 29, 0.4); */
+      position: absolute;
+      background:url('/../../assets/images/Logo.png');
+      background-repeat: no-repeat;
+      background-size: 11% 10%;
+      left: 30px;
+      top: 50px;
+      bottom: 0;
+      right: 0;
+      
+    }
+  }
+
+
+
+  @media screen and (max-width: 510px) {
+
+   
+   
+//     .content[_ngcontent-c1]::after{
+//     content: " ";
+//     position: absolute;
+//     background: url(/../../assets/images/content-left-banking.svg);
+//     background-repeat: no-repeat;
+//     background-size: 74% 72%;
+//     max-width: 97px;
+//     left: 260px;
+//     top: 28px;
+//     bottom: 0px;
+//     right: 0;
+//     height: 50px;
+// }
+
+.content[_ngcontent-c1]::before {
+  content: " ";
+    position: absolute;
+    background: url('/../../assets/images/Logo.png');
+    background-repeat: no-repeat;
+    background-size: 13% 20%;
+    left: 73px;
+    top: -20px;
+    bottom: 0;
+    right: 0;
+}
+  }
+
+
+
+
+  @media screen and (min-width: 900px) {
+
+  
+    // .content[_ngcontent-c1]::after {
+    //   content: " ";
+    //   position: absolute;
+    //   background:url('/../../assets/images/content-left.png');
+    //   background-repeat: no-repeat;
+    //   background-size: 52% 79%;
+    //   max-width:428px;
+    //   left: 90px;
+    //   top: 410px;
+    //   bottom: 0;
+    //   right: 0;
+    // }
+      }
+
+
+
+  

@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans);
+@import "~bootstrap/dist/css/bootstrap.min.css";
+//@import '~css-star-rating/scss/star-rating';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+html,
+body {
+  font-size: 8px;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  font-size: 2rem;
+  div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+  }
+  div::-webkit-scrollbar {
+    width: 3px;
+    background-color: #F5F5F5;
+  }
+  div::-webkit-scrollbar-thumb {
+    background-color: #999999;
+  }
+}
+
+.owl-dt-container{
+  display:block;
+  font-size:16px !important;
+  //font-size:1rem;
+  background:#fff;
+  pointer-events:auto;
+  z-index:1000
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  border: #F4F4F6 !important;
+  box-shadow: none !important;
+}
+.btn, .btn:hover, .btn:active, .btn:visited {
+  border: #F4F4F6 !important;
+  box-shadow: none !important;
+}
+
+.chatbot__input:hover, input:hover, .chatbot__input:focus, input:focus{
+  border-color:#ced4da !important;
+  border-top-color: #ced4da !important;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: orangered !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.carousel[_ngcontent-c2] {
+  margin-bottom: 15px;
+ 
+}
+.carousel {
+  position: relative !important;
+  top: 34px !important;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,27 @@
+.footer {
+    background-color: #021e48;;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    &__nav {
+      font-size: 14px;
+      margin:0 auto;
+      .link {
+        padding-left: 50px;
+        color: #ffffff;
+      }
+    }
+    &__copyright {
+      font-size: 1.3rem;
+    }
+    .brand {
+      width: 85px;
+    }
+  }
+  

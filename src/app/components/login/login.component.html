@@ -1,0 +1,15 @@
+<div class="login">
+  <div class="fadeIn first">
+  </div>
+  <form (ngSubmit)="isValidUser()" [formGroup]="loginForm">
+    <div class="form-group">
+      <input type="text" class="form-control fadeIn second login__input" [ngClass]="{'error': loginForm.controls['username'].invalid && loginForm.touched}" formControlName="username" aria-describedby="username"
+        placeholder="User Name" required>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control fadeIn third login__input" [ngClass]="{'error': loginForm.controls['password'].invalid && loginForm.touched}" formControlName="password" placeholder="Password"
+        required>
+    </div>
+    <input type="submit" class="login__btn btn fadeIn fourth" value="LOGIN">
+  </form>
+</div>

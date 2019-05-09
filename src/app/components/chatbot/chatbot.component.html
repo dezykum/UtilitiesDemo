@@ -1,0 +1,103 @@
+<div>
+  <div class="chat-box" id="opa-block"  *ngIf="this.state=='inactive'" (click)="toggleChatBot(true)">
+  <div class="bot-logo-container" >
+    <img src="../../assets/images/Chaticon.png" />
+  </div>
+  </div>
+  <div class="bot-position" [@enterAnimation]="state" >
+    <div class="header" *ngIf="state=='active'">
+        <!-- <img class="logo-chat" src="../../assets/images/DC.svg" /> -->
+       <span class="title">Digital Concierge</span> 
+      <span class="chatbotIcons">
+        <!-- <span class="minimize" (click)="minimizeChatBot(false)">
+          <img  src="../../assets/images/minimise-icon-default.png">
+        </span> -->
+        <span class="close" (click)="toggleChatBot(false)">
+          <img  src="../../assets/images/closeicon.png">
+        </span>
+    </span>
+    </div>
+    <div class="chatbot px-3 py-4" *ngIf="state=='active'">
+      <div class="chatbot__conversation" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+
+        <div *ngFor="let chat of chatConversation; let i = index;let last = last">
+          <div class="chatbot__chat {{chat.from}}">
+           
+            <div  class="text" [innerHTML]="chat.message | safeHtml"></div>
+              <div *ngIf="chat.buttons" id="yesNoButtons" class="displayButton">
+                <button class="btn btn-primary" *ngFor="let button of chat.buttons" (click)="sendMessage(button.postback, $event)">
+                  {{button.text}}</button>
+                </div>  
+                
+
+                <div *ngIf="(chat.imagetwo && chat.imagetwo.length !==0)">
+                    <img  src="../../assets/images/recommendation-UC3.png" width="100%">
+                  </div>
+
+                  <div *ngIf="(chat.image && chat.image.length !==0)">
+                    <img  src="../../assets/images/YellowArea.jpg" width="100%">
+                  </div>
+
+                  <div *ngIf="(chat.newimage && chat.newimage.length !==0)">
+                    <img  src="../../assets/images/malaysiaCruise.jpg" width="100%">
+                  </div>
+
+                  <div *ngIf="(chat.Qatarimg && chat.Qatarimg.length !==0)">
+                    <img  src="../../assets/images/qatarCruise.jpg" width="100%">
+                  </div>
+
+                 
+
+                <div *ngIf="(chat.carousel && chat.carousel.length !==0 )">
+                    <ngx-slick-carousel class="carousel" #slickModal='slick-carousel' [config]="slideConfig" >
+                      <div ngxSlickItem *ngFor="let slide of slides" class="slide" >
+                            <img src="{{ slide.img }}" alt="" width="100%" >
+                            
+                            <button class="btn btn-primary mt-3"  (click)="carouselButtonClick(slide.value)">
+                                {{slide.value}}</button>                                      
+                      </div>
+                    </ngx-slick-carousel>                              
+                  </div> 
+
+
+                  <div *ngIf="(chat.Asiancarousel && chat.Asiancarousel.length !==0)">
+                      <ngx-slick-carousel class="carousel" style="top:9px !important;" #slickModal='slick-carousel' [config]="slideConfig" >
+                        <div ngxSlickItem *ngFor="let slide of asianslides" class="slide" >
+                              <img src="{{ slide.img }}" alt="" width="100%" >
+                              
+                              <button class="btn-primary carouselButton mt-3"  (click)="asianslidescarouselButtonClick(slide.value)">
+                                  {{slide.value}}</button>                                      
+                        </div>
+                      </ngx-slick-carousel>                              
+                    </div> 
+
+               
+
+              
+               
+               
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="chatbot__input">
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="message" placeholder="Type your message" (keyDown.enter)="sendMessage(undefined, $event)" (keyDown.ArrowUp)="getMessageHistory('up')"
+            (keyDown.ArrowDown)="getMessageHistory('down')" >
+
+          <a class="send"  (click)="sendMessage()">
+              <img  src="../../assets/images/Senticon2.png">
+          </a>
+          <a class="caret-up pointer" (click)="getMessageHistory('up')" *ngIf="isCaretUp">
+              <!-- <img  src="../../assets/images/showtext-icon-DF.png"> -->
+          </a>
+          <a class="caret-down pointer" (click)="getMessageHistory('down')" *ngIf="isCaretDown">
+              <!-- <img  src="../../assets/images/showtext-icon-DF.png"> -->
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
